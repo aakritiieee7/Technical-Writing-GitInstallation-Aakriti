@@ -24,10 +24,78 @@ When you type a URL in your browser and press Enter, a fascinating journey begin
 - A secure connection is established
 
 ## 4. HTTP Request Formation
-- Browser creates an HTTP request with:
-  - **TODO:**Complete the request formation
+- Browser creates an HTTP request with the following HTTP Request Components:
 
-**TODO:** Add common HTTP headers and their purposes
+## HTTP Methods
+HTTP methods define the intended action for a request:
+
+### GET
+- Retrieves resources from the server
+- Cannot include a request body
+- Data sent through URL parameters only
+- Example: `GET /api/products`
+
+### POST
+- Submits data to create new resources
+- Includes data in request body
+- Example: `POST /api/users`
+
+### PUT
+- Updates existing resources completely
+- Includes full resource in body
+- Example: `PUT /api/users/123`
+
+### DELETE
+- Removes specified resources
+- Typically no body needed
+- Example: `DELETE /api/users/123`
+
+## Headers
+Headers provide essential metadata for request processing:
+
+### Common Request Headers
+- Host: Target host and port number
+- Content-Type: Format of sent data
+- Content-Length: Size of request body
+- Authorization: Authentication credentials
+- Accept: Expected response formats
+- User-Agent: Client application info
+- Cookie: Session data
+
+Example header set:
+```
+Host: api.example.com
+Content-Type: application/json
+Content-Length: 128
+Authorization: Bearer <token>
+```
+
+## Request Body
+The body carries data in various formats based on Content-Type:
+
+### Types
+1. application/json
+   - Structured data in JSON format
+   - Used for API requests
+
+2. application/x-www-form-urlencoded
+   - Simple key-value pairs
+   - Default for HTML forms
+
+3. multipart/form-data
+   - File uploads
+   - Mixed content types
+
+## URL Parameters
+Query parameters in the URL for data transmission:
+
+### Structure
+- Start with question mark (?)
+- Use key=value format
+- Join multiple parameters with ampersand (&)
+- Must be URL-encoded
+
+Example: `/search?query=term&category=books&page=1`
 
 ## 5. Server Processing
 - Request arrives at the server
