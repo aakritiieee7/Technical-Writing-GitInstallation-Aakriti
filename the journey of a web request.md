@@ -170,12 +170,90 @@ If additional resources (images, stylesheets, scripts) are needed, the browser s
 **TODO:** Add space and time complexity analysis for different caching strategies
 
 ## Error Scenarios
-- **TODO:**Complete the error scenarios
+### **Error Scenarios in Web Requests**  
 
-## Security Considerations
-- **TODO:**Complete the security considerations
+When a web request fails, the server responds with an **HTTP status code** indicating the issue. Below are common errors, their causes, and how to handle them on both the client and server sides.  
 
-**TODO:** Add detailed explanation of common security vulnerabilities and prevention techniques
+---
+
+### **1. 404 Not Found**  
+**Cause:**  
+- The requested page, file, or API endpoint does not exist.  
+- The URL is incorrect, broken, or the resource was removed.  
+
+**Client-Side Handling:**  
+- Check for typos in the URL.  
+- Redirect users to a valid page (e.g., homepage or search page).  
+
+**Server-Side Handling:**  
+- Implement a **custom 404 page** with navigation options.  
+- Ensure proper **URL routing** in the backend.  
+
+---
+
+### **2. 500 Internal Server Error**  
+**Cause:**  
+- A general server failure due to a bug, database issue, or misconfiguration.  
+
+**Client-Side Handling:**  
+- Show a **friendly error message** and suggest retrying later.  
+
+**Server-Side Handling:**  
+- Log errors for debugging.  
+- Use **try-catch blocks** to handle failures gracefully.  
+
+---
+
+### **3. 403 Forbidden**  
+**Cause:**  
+- The user lacks permission to access the resource (e.g., admin-only pages).  
+
+**Client-Side Handling:**  
+- Display an **access denied message** with login suggestions.  
+
+**Server-Side Handling:**  
+- Enforce authentication and authorization rules.  
+- Restrict access via backend configurations.  
+
+---
+
+### **4. 400 Bad Request**  
+**Cause:**  
+- The request has invalid syntax, missing parameters, or bad formatting.  
+
+**Client-Side Handling:**  
+- Validate inputs before sending the request.  
+- Ensure API requests follow the expected format.  
+
+**Server-Side Handling:**  
+- Validate and sanitize user input.  
+- Return clear error messages to help debugging.  
+
+---
+
+### **5. 401 Unauthorized**  
+**Cause:**  
+- Authentication is required but missing or invalid (e.g., expired token, incorrect credentials).  
+
+**Client-Side Handling:**  
+- Prompt the user to log in or refresh credentials.  
+
+**Server-Side Handling:**  
+- Implement authentication (JWT, OAuth, session-based).  
+- Return appropriate headers for login guidance.  
+
+---
+
+### **6. 408 Request Timeout**  
+**Cause:**  
+- The client took too long to send a request, or the server took too long to respond.  
+
+**Client-Side Handling:**  
+- Retry the request after a short delay.  
+
+**Server-Side Handling:**  
+- Increase the timeout limit if needed.  
+- Optimize server-side processing.  
 
 ---
 
