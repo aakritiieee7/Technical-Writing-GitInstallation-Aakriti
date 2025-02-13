@@ -113,8 +113,6 @@ Security response headers protect against client-side vulnerabilities. They enfo
 - Response is generated
 
 ## 6. Response Journey
-### **HTTP Response Journey**  
-
 Once the server receives an HTTP request, it processes it and sends back a structured response. This journey involves several steps:  
 
 #### **1. Server Processing the Request**  
